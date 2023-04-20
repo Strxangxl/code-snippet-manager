@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { motion } from "framer-motion";
 import Layout from "@/layout";
-import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "@/styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -12,11 +12,10 @@ export default function App({ Component, pageProps }: AppProps) {
       transition={{ duration: 0.5 }}
     >
       <ChakraProvider theme={theme}>
-        <ColorModeProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ColorModeProvider>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </motion.div>
   );
