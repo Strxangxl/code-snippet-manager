@@ -27,7 +27,7 @@ const Footer = () => {
             fontWeight="bold"
             color={linkColor}
           >
-            Strxangxl
+            @Strxangxl
           </Link>
         </Text>
       </Stack>
